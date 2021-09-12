@@ -1,0 +1,103 @@
+<div class="container">
+    <div class="bg-light rounded-3 imagenproducto">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Cocina y Mesa</h1>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <h1 class="text-center">Cocina y Mesa</h1>
+
+    <div class="d-flex bd-highlight">
+        <div class="p-2 flex-grow-1 bd-highlight">Filtrar Por</div>
+        <div class="p-2 bd-highlight mx-5">259 Articulos</div>
+        <div class="p-2 bd-highlight">Ordenar por</div>
+    </div>
+</div>
+<div id="articulos" class="sectionproductos">
+    <div class="container">
+        <div class="row">
+            <div class="col-3  d-none d-lg-block">
+
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                             Cocina
+                    </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Utensilios en Set</li>
+                                    <li>Frascos y Botes</li>
+                                    <li>Guantes y Agarradores</li>
+                                    <li>Gabachas</li>
+                                    <li>Filtros de Agua y Repuestos </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Mesa
+                    </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Vasos</li>
+                                    <li>Picheles</li>
+                                    <li>Servilletas y Accesorios</li>
+                                    <li>Ensaladeras</li>
+                                    <li>Platos</li>
+                                    <li>Tazas, Pocillos y Porcelanas</li>
+                                    <li>Bandejas para Servir</li>
+                                    <li>Individuales</li>
+                                    <li>Camino de Mesa</li>
+                                    <li>Cremera y Azucarera</li>
+                                    <li>Copas</li>
+                                    <li>Cajas para Té</li>
+                                    <li>Teteras y Cafeteras</li>
+                                    <li>Aisladores</li>
+                                    <li>Canastas</li>
+                                    <li>Portavasos</li>
+                                    <li>Manteles</li>
+                                    <li>Saleros y Pimenteros</li>
+                                    <li>Tazones</li>
+                                    <li>Platos Bowls</li>
+                                    <li>Set de Vajillas</li>
+                                    <li>Aceiteros y Vinagreras</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-9">
+                <div class="row">
+                    <div class="col-6 col-md-3 py-1" *ngFor="let item of [1,1,1,1,1,1,1,1]">
+
+                        <div class="card">
+                            <img src="assets/no-image.jpg" class="card-img-top p-3" alt="...">
+                            <div class="card-body">
+                                <p class="card-title"><strong>Bowl De Teca Pequeño</strong></p>
+                                <a class="favoritosshop"><i class="fa fa-heart" aria-hidden="true"></i> </a>
+                                <div class="card-text py-3">Q229.99</div>
+                                <a class="botoncomprar text-white"><span>Agregar<i class="fa fa-shopping-cart" aria-hidden="true"></i> </span></a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,151 @@
 /* You can add global styles to this file, and also import other style files */
+
+nav {
+    background-color: white;
+}
+
+.imagenproducto {
+    margin-top: 4px;
+    background-image: url('https://fachadascasas.com/wp-content/uploads/2018/10/Cocina-peque%C3%B1a-blogc-3-e1540846837561-1.jpg') !important;
+    height: 400px;
+    color: white
+}
+
+.imagenproducto h1 {
+    margin-top: 126px;
+    text-align: end;
+    margin-right: 59px;
+}
+
+.navbaropcion {
+    height: 125px;
+}
+
+.primarycolor {
+    background-color: #101e8e !important
+}
+
+.inputsearch {
+    border-radius: 20px !important;
+}
+
+.subemnusegundo {
+    height: 76px !important;
+}
+
+.busquedaboton {
+    background-color: #93D500 !important;
+    border-color: #93D500 !important;
+    color: #26802d !important;
+    border-radius: 50px !important;
+    position: absolute;
+    right: 0px;
+    top: 4px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.favoritosshop {
+    position: absolute;
+    right: 6px;
+    top: 4px;
+    color: gray !important;
+    font-size: 30px !important;
+}
+
+.botoncomprar {
+    background-color: #93D500 !important;
+    border-color: #93D500 !important;
+    border-radius: 19px;
+    color: white;
+    border: 4px solid #26802d;
+}
+
+.botoncomprar span {
+    padding: 10px;
+    font-size: 13px;
+}
+
+.secondarycolor {
+    border-color: #93D500 !important;
+    color: #93D500 !important;
+    font-size: 40px;
+}
+
+.iconosinicio {
+    margin-top: 5px;
+}
+
+.iconosinicio {
+    margin-right: 0px;
+}
+
+.submenu3 li {
+    display: inline;
+    padding-left: 3px;
+    padding-right: 3px;
+    right: 30px;
+}
+
+.submenu3 li {
+    cursor: pointer;
+}
+
+.submenu3 li {
+    margin-right: 1rem!important;
+    margin-left: 1rem!important;
+}
+
+a {
+    text-decoration: none !important;
+    color: white !important;
+    cursor: pointer !important;
+}
+
+.footeropcions h4 {
+    font-weight: bold;
+}
+
+.opcionesfooter {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.opcionesfooter li {
+    display: inline;
+    text-align: left;
+}
+
+.tercaryfooter {
+    background-color: #fff;
+    color: black;
+    font-size: 11px;
+    height: 55px;
+}
+
+.containerterminos {
+    margin: 41px;
+}
+
+#articulos {
+    background-color: #f6f6f6;
+}
+
+@media(max-width: 891px) {
+    .departamentos {
+        padding-top: 30px;
+        font-size: 11px;
+    }
+    .responsiveclass {
+        display: none !important;
+    }
+    .responsiveicons {
+        position: absolute;
+        right: 1px;
+    }
+    .secondarycolor {
+        border-color: #93D500 !important;
+        color: #93D500 !important;
+        font-size: 20px;
+    }
+}
