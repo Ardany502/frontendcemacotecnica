@@ -1,11 +1,31 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">DashBoard</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+
+        <a class="navbar-brand">DashBoard</a>
+
+        <div class="row  d-sm-none">
+            <div class="col-6">
+                <img src="assets/no-image.jpg" class="fotoperfilheader mx-5">
+            </div>
+            <div class="col-6">
+                <button class="btn btn-primary botoncerrar">Cerrar Session</button>
+            </div>
+
+            <div class="col-12">
+                <hr>
+                <ul class="list-group list-group-flush ">
+                    <a [routerLink]="['/dashboard','productos']">
+                        <li class="list-group-item"> Productos</li>
+                    </a>
+                    <a [routerLink]="['/dashboard','usuarios']" aria-current="page">
+                        <li class="list-group-item">Usuarios</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+
         <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <ul class="navbar-nav me-auto my-2  navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
                     <a [routerLink]="['/dashboard','usuarios']" routerLinkActive="active" class="nav-link active" aria-current="page">Usuarios</a>
                 </li>
@@ -16,8 +36,9 @@
 
             </ul>
             <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <img src="assets/no-image.jpg" class="fotoperfilheader mx-5">
+                <button class="btn btn-primary botoncerrar">Cerrar Session</button>
+
             </form>
         </div>
     </div>

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../services/productos.service';
 import { _productos } from '../models/productos.models';
 import { Subscription } from 'rxjs';
@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
   styles: [
   ]
 })
-export class ProductosComponent implements OnInit, OnDestroy {
+export class ProductosComponent implements OnInit {
  
   cargando=false;
   productos: _productos[] = [];
@@ -19,20 +19,16 @@ export class ProductosComponent implements OnInit, OnDestroy {
    }
 
   ngOnInit(): void {
-    this.listarData();
-    this.imgSubs = this.productosService.nuevaImagen.subscribe((img:string) => {
-      console.log(img);
-      console.log("disparando");
+     this.listarData();
+    if(this.productosService.actualizarLista)
+    {
       this.listarData();
-    });
-  }
-  ngOnDestroy(): void {
-    this.imgSubs!.unsubscribe();
+    }
+   
   }
   listarData()
   {
     this.productosService.listarProductos().subscribe(resp=> {
-      console.log(resp.data);
       this.productos = resp.data;
       this.cargando = true;
    });

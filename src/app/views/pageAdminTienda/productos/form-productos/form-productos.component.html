@@ -7,6 +7,7 @@
             <div class="mb-3">
                 <label for="SKU" class="form-label">SKU</label>
                 <input type="text" class="form-control" id="SKU" formControlName="SKU" placeholder="1234568">
+                <span class="form-text text-danger" *ngIf="campoInvalido('SKU')">Debe de ser de 3 campos minimos</span>
             </div>
         </div>
 
@@ -14,6 +15,7 @@
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="nombre" formControlName="nombre" placeholder="Vaso">
+                <span class="form-text text-danger" *ngIf="campoInvalido('nombre')">Debe de ser de 3 campos minimos</span>
             </div>
 
         </div>
@@ -22,6 +24,7 @@
             <div class="mb-3">
                 <label for="precio" class="form-label">Precio</label>
                 <input type="number" class="form-control" id="precio" formControlName="precio" placeholder="Q100">
+                <span class="form-text text-danger" *ngIf="campoInvalido('precio')">Es requerido</span>
             </div>
 
         </div>
@@ -30,6 +33,7 @@
             <div class="mb-3">
                 <label for="inventario" class="form-label">Inventario</label>
                 <input type="number" class="form-control" id="inventario" formControlName="inventario" placeholder="10">
+                <span class="form-text text-danger" *ngIf="campoInvalido('inventario')">es requerido caracteres</span>
             </div>
 
         </div>
@@ -51,6 +55,7 @@
             <div class="mb-3">
                 <label for="descripcion" class="form-label">Descripcion</label>
                 <textarea class="form-control" id="descripcion" placeholder="descripcion" formControlName="descripcion" rows="3"></textarea>
+                <span class="form-text text-danger" *ngIf="campoInvalido('descripcion')">debe de tener minimo 10 caracteres</span>
             </div>
         </div>
 

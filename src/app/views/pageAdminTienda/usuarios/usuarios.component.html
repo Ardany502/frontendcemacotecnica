@@ -13,7 +13,7 @@
     <div class="container py-5 animate__animated animate__fadeIn" *ngIf="cargando">
         <a href="/dashboard/usuario/crear" class="btn btn-primary">Crear Usuarios +</a>
         <hr>
-        <table class="table table-responsive">
+        <table class="table-responsive">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -40,7 +40,7 @@
                     <td>{{ usuario.apellido }}</td>
                     <td>{{ usuario.rol }}</td>
                     <td>{{ usuario.email }}</td>
-                    <td>{{ usuario.created_at }}</td>
+                    <td>{{ usuario.created_at | date :'short' }}</td>
                     <td>
                         <a [routerLink]="['/dashboard','usuario',usuario.id]" class="btn btn-warning mx-2"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                         <a (click)="eliminarUsuario(usuario)" class="btn btn-danger mx-2"><i class="fa fa-trash" aria-hidden="true"></i></a>

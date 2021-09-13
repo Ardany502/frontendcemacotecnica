@@ -10,7 +10,7 @@ const base_url = environment.base_url;
   providedIn: 'root'
 })
 export class UsuarioService {
-
+  actualizarLista = false;
   constructor(private httpClient:HttpClient) { }
 
   listarUsuarios()

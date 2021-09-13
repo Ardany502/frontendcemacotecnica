@@ -11,7 +11,7 @@ const base_url = environment.base_url;
 })
 export class ProductosService {
   
-  public nuevaImagen: EventEmitter<any> = new EventEmitter();
+  actualizarLista = false;
   constructor(private http: HttpClient) { }
 
     listarProductos()

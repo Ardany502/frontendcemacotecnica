@@ -18,11 +18,11 @@ export class FormProductosComponent implements OnInit {
   producto: _productos = new _productos('','',0,'',0,'');
   formularioProductos: FormGroup = this.fb.group({
     nombre: ['',[Validators.required,Validators.minLength(3)]],
-    descripcion: ['',[Validators.required,Validators.minLength(3)]],
+    descripcion: ['',[Validators.required,Validators.minLength(10)]],
     precio: ['',[Validators.required,Validators.minLength(1)]],
     SKU: ['',[Validators.required,Validators.minLength(1)]],
     inventario: ['',[Validators.required,Validators.minLength(1)]],
-    imagen: ['no-imagen'],
+    imagen: ['no-image'],
   });
   constructor(private fb: FormBuilder, private ProductosService:ProductosService, private fileUploadService:FileUploadService, private router:Router) { 
   }
@@ -34,7 +34,11 @@ export class FormProductosComponent implements OnInit {
   }
   guardar()
   {
-    
+    if(this.formularioProductos.invalid)
+    {
+        this.formularioProductos.markAllAsTouched();
+        return;
+    }
     if(this.idurl==="0")
     {
         //guardar
@@ -44,7 +48,7 @@ export class FormProductosComponent implements OnInit {
                  this.producto = resp.data;
                  this.fileUploadService.actualizarFoto(this.imagenSubir,'productos',this.producto.id!);
                  Swal.fire('Guardado','Producto ' + this.producto.nombre + ' creado correctamente', 'success');
-                 this.ProductosService.nuevaImagen.emit();
+                 this.ProductosService.actualizarLista = true;
                  this.router.navigateByUrl('dashboard/productos');
             }
            
@@ -65,6 +69,7 @@ export class FormProductosComponent implements OnInit {
             this.fileUploadService.actualizarFoto(this.imagenSubir,'productos',this.producto.id!);
           }
           Swal.fire('Actualizado','Producto' + this.producto.nombre + ' Actualizado correctamente', 'success');
+          this.ProductosService.actualizarLista = true;
           this.router.navigateByUrl('dashboard/productos');
         })
      
@@ -103,5 +108,11 @@ export class FormProductosComponent implements OnInit {
       this.imgTemp = reader.result;
     }
   }
+  campoInvalido(campo:string)
+  {
+    return this.formularioProductos.controls[campo].errors
+    && this.formularioProductos.controls[campo].touched;
+  }
+  
 }
 

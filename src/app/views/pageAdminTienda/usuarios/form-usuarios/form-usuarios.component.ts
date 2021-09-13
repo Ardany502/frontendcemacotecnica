@@ -55,6 +55,7 @@ export class FormUsuariosComponent implements OnInit {
               {
                 this.fileUploadService.actualizarFoto(this.imagenSubir,'usuarios',this.usuario.id!);
                 Swal.fire('Guardado','Usuario ' + this.usuario.nombre + ' creado correctamente', 'success');
+                this.usuarioservice.actualizarLista = true;
                 this.router.navigateByUrl('dashboard/usuarios');
               }
        });   
@@ -72,6 +73,7 @@ export class FormUsuariosComponent implements OnInit {
           this.fileUploadService.actualizarFoto(this.imagenSubir,'usuarios',this.usuario.id!);
         }
         Swal.fire('Actualizado','Usuario ' + this.usuario.nombre + '  ' +  this.usuario.apellido  +  ' Actualizado correctamente', 'success');
+        this.usuarioservice.actualizarLista = true;
         this.router.navigateByUrl('dashboard/Usuarios');
       })
     }
