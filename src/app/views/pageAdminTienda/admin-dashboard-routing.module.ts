@@ -5,6 +5,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ProductosComponent } from './productos/productos.component';
 import { CrearProductoComponent } from './productos/crear-producto/crear-producto.component';
 import { EditarProductoComponent } from './productos/editar-producto/editar-producto.component';
+import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
+import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario.component';
 
 const routes: Routes = [
   {
@@ -12,6 +14,8 @@ const routes: Routes = [
     component: HomeDashboardComponent,
     children: [
         {path: 'usuarios', component: UsuariosComponent},
+        {path: 'usuario/crear', component:CrearUsuarioComponent},
+        {path: 'usuario/:id', component:EditarUsuarioComponent},
         {path: 'productos', component: ProductosComponent},
         {path: 'producto/crear', component: CrearProductoComponent},
         {path: 'producto/:id', component: EditarProductoComponent},

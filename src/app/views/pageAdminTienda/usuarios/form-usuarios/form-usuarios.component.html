@@ -1,0 +1,83 @@
+<form (ngSubmit)="guardar()" autocomplete="off" [formGroup]="formularioUsuarios" *ngIf="!cargando">
+    <div class="row animate__animated animate__fadeIn">
+        <div class="col-12 col-sm-6">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" formControlName="nombre" placeholder="juan...">
+                <span class="form-text text-danger" *ngIf="campoInvalido('nombre')">Debe de tener de 3 letras</span>
+            </div>
+        </div>
+
+
+        <div class="col-12 col-sm-6">
+            <div class="mb-3">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="apellido" formControlName="apellido" placeholder="Hernades...">
+                <span class="form-text text-danger" *ngIf="campoInvalido('apellido')">Debe de tener de 3 letras</span>
+            </div>
+        </div>
+
+
+
+        <div class="col-12 col-sm-4">
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Telefono</label>
+                <input type="number" class="form-control" id="telefono" formControlName="telefono" placeholder="+502 xxx-xxx-xxx">
+                <span class="form-text text-danger" *ngIf="campoInvalido('telefono')">Debe de tenero 7 digitos</span>
+            </div>
+        </div>
+
+
+
+        <div class="col-12 col-sm-4">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" formControlName="email" placeholder="ejemplo@hotmail.com">
+                <span class="form-text text-danger" *ngIf="campoInvalido('email')">Debe de ser email</span>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-4">
+            <label for="rol" class="form-label">Seleccione Rol</label>
+            <select class="form-control" formControlName="rol">
+           <option value="administrador">Administrador</option>
+           <option value="colaborador">Colaborador</option>
+      </select>
+            <span class="form-text text-danger" *ngIf="campoInvalido('rol')">Seleccione una opcion</span>
+        </div>
+
+
+        <div class="col-12 col-sm-6">
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="password" formControlName="password" placeholder="********">
+                <span class="form-text text-danger" *ngIf="campoInvalido('password')">Debe de tener de 5 letras minimo
+                </span>
+            </div>
+        </div>
+
+
+
+        <div class="col-12 col-sm-6">
+            <div class="mb-3">
+                <label for="password1" class="form-label">Repetia Contraseña</label>
+                <input type="password" class="form-control" id="password1" formControlName="password1" placeholder="********">
+                <span class="form-text text-danger" *ngIf="campoInvalido('password1')">Debe de tener de 5 letras minimo</span>
+            </div>
+        </div>
+
+
+        <div class="col-12 col-sm-6">
+
+            <img *ngIf="imgTemp" [src]="imgTemp" class="img-thumbnail imgsubir">
+            <img *ngIf="!imgTemp" [src]="usuario.imagen! | imagen " class="img-thumbnail imgsubir">
+            <hr>
+            <input type="file" (change)="cambiarImagen($event)" class="py-2">
+        </div>
+
+        <div class="col-12 col-sm-6">
+            <button class="btn btn-primary">Guardar</button>
+        </div>
+
+    </div>
+</form>

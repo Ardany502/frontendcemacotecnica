@@ -14,10 +14,22 @@ import { HomeDashboardComponent } from './home-dashboard/home-dashboard.componen
 import { CrearProductoComponent } from './productos/crear-producto/crear-producto.component';
 import { EditarProductoComponent } from './productos/editar-producto/editar-producto.component';
 import { FormProductosComponent } from './productos/form-productos/form-productos.component';
+import { FormUsuariosComponent } from './usuarios/form-usuarios/form-usuarios.component';
+import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
+import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario.component';
 
 
 @NgModule({
-  declarations: [HomeDashboardComponent,ProductosComponent,UsuariosComponent, ImagenPipe, CrearProductoComponent, EditarProductoComponent, FormProductosComponent],
+  declarations: [HomeDashboardComponent,
+    ProductosComponent,
+    UsuariosComponent, 
+    ImagenPipe, 
+    CrearProductoComponent, 
+    EditarProductoComponent, 
+    FormProductosComponent, 
+    FormUsuariosComponent, 
+    CrearUsuarioComponent, 
+    EditarUsuarioComponent],
   imports: [
     CommonModule,
     AdminDashboardRoutingModule,

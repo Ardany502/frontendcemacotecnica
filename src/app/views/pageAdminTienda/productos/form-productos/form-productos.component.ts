@@ -15,7 +15,7 @@ export class FormProductosComponent implements OnInit {
   public imagenSubir!: File;
   public imgTemp: any;
   cargando = false;
-  producto!: _productos;
+  producto: _productos = new _productos('','',0,'',0,'');
   formularioProductos: FormGroup = this.fb.group({
     nombre: ['',[Validators.required,Validators.minLength(3)]],
     descripcion: ['',[Validators.required,Validators.minLength(3)]],
@@ -24,10 +24,13 @@ export class FormProductosComponent implements OnInit {
     inventario: ['',[Validators.required,Validators.minLength(1)]],
     imagen: ['no-imagen'],
   });
-  constructor(private fb: FormBuilder, private ProductosService:ProductosService, private fileUploadService:FileUploadService, private router:Router) { }
+  constructor(private fb: FormBuilder, private ProductosService:ProductosService, private fileUploadService:FileUploadService, private router:Router) { 
+  }
 
   ngOnInit(): void {
-      this.idurl!='0'? this.cargarInformacion(): this.cargando = true; 
+     
+      
+       this.idurl!='0'? this.cargarInformacion(): this.cargando = true; 
   }
   guardar()
   {
@@ -40,7 +43,7 @@ export class FormProductosComponent implements OnInit {
             {
                  this.producto = resp.data;
                  this.fileUploadService.actualizarFoto(this.imagenSubir,'productos',this.producto.id!);
-                 Swal.fire('Guardado','Producto' + this.producto.nombre + ' creado correctamente', 'success');
+                 Swal.fire('Guardado','Producto ' + this.producto.nombre + ' creado correctamente', 'success');
                  this.ProductosService.nuevaImagen.emit();
                  this.router.navigateByUrl('dashboard/productos');
             }
@@ -62,16 +65,11 @@ export class FormProductosComponent implements OnInit {
             this.fileUploadService.actualizarFoto(this.imagenSubir,'productos',this.producto.id!);
           }
           Swal.fire('Actualizado','Producto' + this.producto.nombre + ' Actualizado correctamente', 'success');
-          this.ProductosService.nuevaImagen.emit();
           this.router.navigateByUrl('dashboard/productos');
         })
      
     }
-    
-   
-   
   
-    
   }
   cargarInformacion()
   {

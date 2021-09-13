@@ -38,7 +38,8 @@
         <div class="col-12 col-sm-6">
 
             <img *ngIf="imgTemp" [src]="imgTemp" class="img-thumbnail imgsubir">
-            <img *ngIf="!imgTemp" [src]="producto! | imagen " class="img-thumbnail imgsubir">
+            <img *ngIf="!imgTemp" [src]="producto.imagen! | imagen " class="img-thumbnail imgsubir">
+            <hr>
             <input type="file" (change)="cambiarImagen($event)" class="py-2">
 
         </div>
