@@ -131,6 +131,15 @@ a {
     background-color: #f6f6f6;
 }
 
+.imagentamaño {
+    width: 136px;
+    height: 147px;
+}
+
+.imgproducto {
+    height: 148px
+}
+
 @media(max-width: 891px) {
     .departamentos {
         padding-top: 30px;

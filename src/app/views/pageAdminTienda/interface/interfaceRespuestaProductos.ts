@@ -5,3 +5,9 @@ export interface respuestaProductos {
   msj: string;
 }
 
+export interface respuestaProducto {
+  data: _productos ;
+  code: number;
+  msj: string;
+}
+

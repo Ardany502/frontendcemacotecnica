@@ -1,6 +1,18 @@
 <div id="Productos">
 
     <div class="container py-5">
+        <div *ngIf="!cargando" class="alert alert-primary text-center" role="alert">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden"></span>
+            </div>
+            <p>Cargando....</p>
+        </div>
+
+    </div>
+
+    <div class="container py-5 animate__animated animate__fadeIn" *ngIf="cargando">
+        <a href="/dashboard/producto/crear" class="btn btn-primary">Crear Producto +</a>
+        <hr>
         <table class="table table-responsive">
             <thead>
                 <tr>
@@ -12,6 +24,7 @@
                     <th scope="col">Precio</th>
                     <th scope="col">inventario</th>
                     <th scope="col">Registrado</th>
+                    <th scope="col">Acciones</th>
 
                 </tr>
             </thead>
@@ -19,12 +32,20 @@
                 <tr *ngFor="let producto of productos let i = index">
                     <th scope="row">{{ i+1 }}</th>
                     <td>{{ producto.SKU }}</td>
-                    <td><img [src]="producto.imagen! | imagen" alt="producto.imagen" class="img-thumbnail"></td>
+                    <td>
+                        <div class="imagentamaño">
+                            <img [src]="producto! | imagen" alt="producto" class="img-thumbnail imgproducto">
+                        </div>
+                    </td>
                     <td>{{ producto.nombre }}</td>
                     <td>{{ producto.descripcion }}</td>
                     <td>{{ producto.precio }}</td>
                     <td>{{ producto.inventario }}</td>
                     <td>{{ producto.created_at }}</td>
+                    <td>
+                        <a [routerLink]="['/dashboard','producto',producto.id]" class="btn btn-warning mx-2"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                        <a (click)="eliminarProductos(producto)" class="btn btn-danger mx-2"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    </td>
                 </tr>
 
             </tbody>
