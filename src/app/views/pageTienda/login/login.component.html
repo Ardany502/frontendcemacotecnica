@@ -1,0 +1,41 @@
+<div class="fondo-modal-imagen animated fadIn fast" [class.oculto]="modalSerivce.ocultarModal">
+
+    <div class="modal fade show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" style="display: block; padding-right: 17px;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel1">Bienvenido Iniciar session</h4>
+                    <button type="button" (click)="cerrarModal()" class="close modalclose" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+
+
+                    <div class="">
+                        <form (ngSubmit)="guardar(formlogin)" autocomplete="off" #formlogin="ngForm">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Su mail</label>
+                                <input type="email" class="form-control" id="email" aria-describedby="email" [ngModel]="email" name="email" placeholder="Ej: usuario@mail.com" required email>
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" [ngModel]="password" name="password" id="password" required min="4">
+
+                            </div>
+                        </form>
+                        <span class="badge badge-danger errormensaje" *ngIf="error!=''">{{error}}</span>
+                    </div>
+
+
+                    <br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" (click)="cerrarModal()" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary ingresarlogin" [disabled]="formlogin.invalid" (click)="guardar(formlogin)">Ingresar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
