@@ -8,49 +8,55 @@
 
 
 <div class="container">
-    <h1 class="text-center">Cocina y Mesa</h1>
+    <h1 class="text-center d-none d-md-block">Cocina y Mesa</h1>
 
     <div class="d-flex bd-highlight">
-        <div class="p-2 flex-grow-1 bd-highlight">Filtrar Por</div>
-        <div class="p-2 bd-highlight mx-5">{{productos.length}} Articulos</div>
-        <div class="p-2 bd-highlight">Ordenar por</div>
+
+        <div class="botonresponsive p-2 flex-md-grow-1 bd-highlight">Filtrar Por</div>
+        <div class="p-2 bd-highlight mx-5  posicioncantidad " *ngIf="cargando">{{productos.length}} Articulos</div>
+        <div class="botonresponsive p-2 bd-highlight">Ordenar por</div>
     </div>
 </div>
 <div id="articulos" class="sectionproductos">
     <div class="container">
         <div class="row">
             <div class="col-2 d-none d-lg-block">
-                    
-                    <div class="row">
 
-                        <div class="d-flex flex-column bd-highlight mb-3">
-                            <div class="bd-highlight">
+                <div class="row">
 
-                                <div class="d-flex flex-row bd-highlight mb-3 py-2">
-                                    <div class="bd-highlight flex-grow-1"><h5 class="subtitulos">Cocina</h5></div>
-                                    <div class="bd-highlight"> <i class="fa fa-angle-up" aria-hidden="true"></i></div>
+                    <div class="d-flex flex-column bd-highlight mb-3">
+                        <div class="bd-highlight">
+
+                            <div class="d-flex flex-row bd-highlight mb-3 py-2">
+                                <div class="bd-highlight flex-grow-1">
+                                    <h5 class="subtitulos">Cocina</h5>
                                 </div>
-                                <hr>
+                                <div class="bd-highlight"> <i class="fa fa-angle-up" aria-hidden="true"></i></div>
                             </div>
-                            <div class="bd-highlight">  
-                                <ul class="categoriaslista">
+                            <hr>
+                        </div>
+                        <div class="bd-highlight">
+                            <ul class="categoriaslista">
                                 <li><a href="">Utensilios en Set</a></li>
                                 <li><a href="">Frascos y Botes</a></li>
                                 <li><a href="">Guantes y Agarradores</a></li>
                                 <li><a href="">Gabachas</a></li>
                                 <li><a href="">Filtros de Agua y Repuestos</a> </li>
                             </ul>
-                           </div>
-                          </div>
-                          <div class="d-flex flex-column bd-highlight">
-                            <div class="bd-highlight">
-                                <div class="d-flex flex-row bd-highlight mb-3">
-                                    <div class="bd-highlight flex-grow-1"><h5 class="subtitulos">Mesa</h5></div>
-                                    <div class="bd-highlight"> <i class="fa fa-angle-up" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column bd-highlight">
+                        <div class="bd-highlight">
+                            <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="bd-highlight flex-grow-1">
+                                    <h5 class="subtitulos">Mesa</h5>
                                 </div>
-                                <hr>
+                                <div class="bd-highlight"> <i class="fa fa-angle-up" aria-hidden="true"></i></div>
                             </div>
-                            <div class="bd-highlight listaarticulos"><ul class="categoriaslista">
+                            <hr>
+                        </div>
+                        <div class="bd-highlight listaarticulos">
+                            <ul class="categoriaslista">
                                 <li><a>Vasos</a></li>
                                 <li><a>Picheles</a></li>
                                 <li><a>Servilletas y Accesorios</a></li>
@@ -73,27 +79,33 @@
                                 <li><a>Platos Bowls</a></li>
                                 <li><a>Set de Vajillas</a></li>
                                 <li><a>Aceiteros y Vinagreras</a></li>
-                            
-                                
-                            </ul></div>
-                          
-                          </div>
-
-                  
 
 
-                    
-            </div>
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+
+
+
+                </div>
 
             </div>
 
             <div class="col-12 col-sm-10">
-                <div class="row">
+
+                <div class=" d-block  text-center" *ngIf="!cargando">
+                    <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+                </div>
+
+                <div class="row animate__animated animate__fadeIn" *ngIf="cargando">
                     <div class="col-6 col-md-3 py-1" *ngFor="let producto of productos">
 
                         <div class="card">
                             <div class="imagenproductos">
-                            <img [src]="producto.imagen | imagen" class="card-img-top p-3" alt="producto.img">
+                                <img [src]="producto.imagen | imagen" class="card-img-top p-3" alt="producto.img">
                             </div>
                             <div class="card-body">
                                 <p class="card-title imagencardproductos"><strong>{{ producto.nombre}}</strong></p>

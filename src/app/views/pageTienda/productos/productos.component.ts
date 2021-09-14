@@ -9,13 +9,15 @@ import { ProductosService } from '../../services/productos.service';
   ]
 })
 export class ProductosComponent implements OnInit {
-  
+
+  cargando =false;
   productos: producto []= [];
   constructor(private productoService: ProductosService) { }
 
   ngOnInit(): void {
      this.productoService.getLIstarProductos().subscribe(resp=> {
        this.productos = resp.data;
+       this.cargando= true;
      })
   }
 

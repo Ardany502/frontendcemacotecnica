@@ -10,10 +10,12 @@ nav {
     height: 400px;
     color: white
 }
-.imagenlogo{
+
+.imagenlogo {
     height: 48px;
     width: 72px;
 }
+
 .botoncerrar {
     height: 39px;
     width: 127px;
@@ -32,7 +34,7 @@ nav {
 }
 
 .responsiveicons li {
-    cursor:pointer !important;
+    cursor: pointer !important;
 }
 
 .navbaropcion {
@@ -119,30 +121,30 @@ a {
     color: white !important;
     cursor: pointer !important;
 }
-.categoriaslista li{
-    list-style:none;
+
+.categoriaslista li {
+    list-style: none;
     cursor: pointer !important;
     margin-top: 9px;
 }
 
-.categoriaslista li a{
-
+.categoriaslista li a {
     color: black !important;
     font-weight: 300;
 }
-.listaarticulos{
+
+.listaarticulos {
     height: 365px;
     overflow-y: scroll;
 }
-.categoriaslista 
-{
-   padding: 10px;
+
+.categoriaslista {
+    padding: 10px;
 }
-.subtitulos{
+
+.subtitulos {
     color: #101e8e;
 }
-
-
 
 .footeropcions h4 {
     font-weight: bold;
@@ -217,17 +219,27 @@ a {
 .errormensaje {
     color: red !important;
 }
-.imagencardproductos{
-    font-size: smaller !important;    
+
+.imagencardproductos {
+    font-size: smaller !important;
     height: 50px;
 }
-.imagenproductos{
+
+.imagenproductos {
     height: 231px !important;
 }
-.imagenproductos img{
+
+.imagenproductos img {
     height: 100% !important;
 }
 
+.responsiveinfo {
+    visibility: visible;
+}
+
+.responsiveinfomobil {
+    visibility: hidden;
+}
 
 @media(max-width: 891px) {
     .departamentos {
@@ -245,5 +257,32 @@ a {
         border-color: #93D500 !important;
         color: #93D500 !important;
         font-size: 20px;
+    }
+    .responsiveinfo {
+        width: 76px;
+        height: 53px;
+        z-index: -1;
+        position: absolute;
+        visibility: hidden;
+    }
+    .responsiveinfomobil {
+        visibility: visible;
+    }
+    .iconosresponsive {
+        font-size: 30px !important;
+    }
+    .botonresponsive {
+        border: 2px solid #ccc;
+        margin-top: 32px;
+        border-radius: 13px;
+        width: 176px;
+        text-align: center;
+        height: 34px;
+        margin-left: 9px;
+    }
+    .posicioncantidad {
+        position: absolute;
+        right: 24%;
+        margin: -3px;
     }
 }
