@@ -8,7 +8,6 @@
 
 
 <div class="container">
-    <h1 class="text-center d-none d-md-block">Cocina y Mesa</h1>
 
     <div class="d-flex bd-highlight">
 
@@ -101,7 +100,7 @@
                 </div>
 
                 <div class="row animate__animated animate__fadeIn" *ngIf="cargando">
-                    <div class="col-6 col-md-3 py-1" *ngFor="let producto of productos">
+                    <div class="col-6 col-md-3 py-1" *ngFor="let producto of dataFiltrada">
 
                         <div class="card">
                             <div class="imagenproductos">
@@ -114,11 +113,11 @@
                                 <a class="botoncomprar text-white"><span>Agregar<i class="fa fa-shopping-cart" aria-hidden="true"></i> </span></a>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
-
+                <div class=" d-block  text-center py-3">
+                    <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" *ngIf="contador<=productos.length"></i>
+                </div>
             </div>
         </div>
     </div>
