@@ -241,6 +241,10 @@ a {
     visibility: hidden;
 }
 
+.ocultartext {
+    display: none !important;
+}
+
 @media(max-width: 891px) {
     .departamentos {
         padding-top: 30px;
@@ -284,5 +288,29 @@ a {
         position: absolute;
         right: 24%;
         margin: -3px;
+    }
+    .scrollresponsivemenu {
+        display: none !important;
+    }
+    .scrolliconos {
+        width: 94px;
+        top: 18px;
+    }
+    .searchscroll {
+        position: absolute;
+        width: 190px;
+        top: 8px;
+        right: 88px;
+    }
+    .ocultartext {
+        display: none !important;
+    }
+    .aprecertitulo2 {
+        display: block !important;
+        position: absolute;
+        top: 16px;
+        border-color: #93D500 !important;
+        color: #93D500 !important;
+        left: 14px;
     }
 }

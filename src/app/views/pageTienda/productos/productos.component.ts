@@ -47,5 +47,5 @@ export class ProductosComponent implements OnInit {
     });
     observe.observe(document.querySelector('.footer')!);
     }
-
 }
+
