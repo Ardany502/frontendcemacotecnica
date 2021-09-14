@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../services/usuario.service';
 import { _usuarios } from '../models/usuarios.models';
 import Swal from 'sweetalert2';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -12,7 +13,7 @@ import Swal from 'sweetalert2';
 export class UsuariosComponent implements OnInit {
   cargando=false;
   usuarios: _usuarios [] = [];
-  constructor(private usuariosService:UsuarioService) { }
+  constructor(private usuariosService:UsuarioService, public loginservice:LoginService) { }
 
   ngOnInit(): void {
     this.listarData();

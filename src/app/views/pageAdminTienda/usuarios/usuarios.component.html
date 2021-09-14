@@ -44,7 +44,7 @@
                         <td>{{ usuario.created_at | date :'short' }}</td>
                         <td>
                             <a [routerLink]="['/dashboard','usuario',usuario.id]" class="btn btn-warning mx-2"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                            <a (click)="eliminarUsuario(usuario)" class="btn btn-danger mx-2"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                            <a *ngIf="loginservice.usuario.rol==='administrador'" (click)="eliminarUsuario(usuario)" class="btn btn-danger mx-2"><i class="fa fa-trash" aria-hidden="true"></i></a>
                         </td>
                     </tr>
 

@@ -37,6 +37,9 @@ import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario
     ReactiveFormsModule,
     RouterModule
     
+  ],
+  exports: [
+    ImagenPipe
   ]
 })
 export class AdminDashboardModule { }

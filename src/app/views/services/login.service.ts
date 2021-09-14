@@ -4,12 +4,14 @@ import { environment } from '../../../environments/environment';
 import { LoginForm } from '../pageTienda/interfaces/login.interface';
 import { tap, map, catchError } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
+import { _usuarios } from '../pageAdminTienda/models/usuarios.models';
 const base_url = environment.base_url;
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-
+  actualizarLista = false;
+  public usuario!: _usuarios;
   constructor(private http:HttpClient) { }
   get token():string{
     return localStorage.getItem('token') || '';
@@ -29,7 +31,8 @@ export class LoginService {
     .pipe(
       map( (resp:any)=>{
           if(resp.code==200)
-          {
+          {  
+            this.usuario = resp.data;
             return true;
           }
             return false;
@@ -48,6 +51,8 @@ export class LoginService {
       })
     );
  }
+
+
 
  logout()
  {

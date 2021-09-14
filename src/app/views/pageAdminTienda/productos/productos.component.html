@@ -46,7 +46,7 @@
                             <td>{{ producto.created_at | date :'short' }}</td>
                             <td>
                                 <a [routerLink]="['/dashboard','producto',producto.id]" class="btn btn-warning mx-2"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                <a (click)="eliminarProductos(producto)" class="btn btn-danger mx-2"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                <a *ngIf="loginservice.usuario.rol==='administrador'" (click)="eliminarProductos(producto)" class="btn btn-danger mx-2"><i class="fa fa-trash" aria-hidden="true"></i></a>
                             </td>
                         </tr>
 

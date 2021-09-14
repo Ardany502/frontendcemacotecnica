@@ -10,7 +10,10 @@ nav {
     height: 400px;
     color: white
 }
-
+.imagenlogo{
+    height: 48px;
+    width: 72px;
+}
 .botoncerrar {
     height: 39px;
     width: 127px;
@@ -23,9 +26,13 @@ nav {
 }
 
 .imagenproducto h1 {
-    margin-top: 126px;
+    margin-top: 211px;
     text-align: end;
     margin-right: 59px;
+}
+
+.responsiveicons li {
+    cursor:pointer !important;
 }
 
 .navbaropcion {
@@ -112,6 +119,30 @@ a {
     color: white !important;
     cursor: pointer !important;
 }
+.categoriaslista li{
+    list-style:none;
+    cursor: pointer !important;
+    margin-top: 9px;
+}
+
+.categoriaslista li a{
+
+    color: black !important;
+    font-weight: 300;
+}
+.listaarticulos{
+    height: 365px;
+    overflow-y: scroll;
+}
+.categoriaslista 
+{
+   padding: 10px;
+}
+.subtitulos{
+    color: #101e8e;
+}
+
+
 
 .footeropcions h4 {
     font-weight: bold;
@@ -186,6 +217,17 @@ a {
 .errormensaje {
     color: red !important;
 }
+.imagencardproductos{
+    font-size: smaller !important;    
+    height: 50px;
+}
+.imagenproductos{
+    height: 231px !important;
+}
+.imagenproductos img{
+    height: 100% !important;
+}
+
 
 @media(max-width: 891px) {
     .departamentos {

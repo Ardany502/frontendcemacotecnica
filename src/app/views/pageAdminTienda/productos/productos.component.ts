@@ -3,6 +3,7 @@ import { ProductosService } from '../services/productos.service';
 import { _productos } from '../models/productos.models';
 import { Subscription } from 'rxjs';
 import Swal from 'sweetalert2';
+import { LoginService } from '../../services/login.service';
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
@@ -14,7 +15,7 @@ export class ProductosComponent implements OnInit {
   cargando=false;
   productos: _productos[] = [];
   imgSubs!:Subscription;
-  constructor(private productosService:ProductosService) {
+  constructor(private productosService:ProductosService, public loginservice: LoginService) {
     
    }
 

@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import { _usuarios } from '../../models/usuarios.models';
 import { FileUploadService } from '../../services/file-upload.service';
 import { UsuarioService } from '../../services/usuario.service';
-
+import { LoginService } from '../../../services/login.service';
 
 @Component({
   selector: 'app-form-usuarios',
@@ -27,9 +27,8 @@ export class FormUsuariosComponent implements OnInit {
     password: ['',[Validators.required,Validators.minLength(5)]],
     password1: ['',[Validators.required,Validators.minLength(5)]],
     imagen: ['no-image'],
-    
   });
-  constructor(private fb: FormBuilder, private usuarioservice:UsuarioService, private fileUploadService:FileUploadService, private router:Router) { }
+  constructor(private fb: FormBuilder, private usuarioservice:UsuarioService,private loginusuario:LoginService, private fileUploadService:FileUploadService, private router:Router) { }
 
   ngOnInit(): void {
   
@@ -56,6 +55,7 @@ export class FormUsuariosComponent implements OnInit {
                 this.fileUploadService.actualizarFoto(this.imagenSubir,'usuarios',this.usuario.id!);
                 Swal.fire('Guardado','Usuario ' + this.usuario.nombre + ' creado correctamente', 'success');
                 this.usuarioservice.actualizarLista = true;
+                this.loginusuario.actualizarLista = true;
                 this.router.navigateByUrl('dashboard/usuarios');
               }
        });   
@@ -74,6 +74,7 @@ export class FormUsuariosComponent implements OnInit {
         }
         Swal.fire('Actualizado','Usuario ' + this.usuario.nombre + '  ' +  this.usuario.apellido  +  ' Actualizado correctamente', 'success');
         this.usuarioservice.actualizarLista = true;
+        this.loginusuario.actualizarLista = true;
         this.router.navigateByUrl('dashboard/Usuarios');
       })
     }
