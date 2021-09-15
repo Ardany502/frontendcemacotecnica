@@ -255,7 +255,7 @@ a {
     }
     .responsiveicons {
         position: absolute;
-        right: 1px;
+        right: 9px;
     }
     .secondarycolor {
         border-color: #93D500 !important;
@@ -294,12 +294,12 @@ a {
     }
     .scrolliconos {
         width: 94px;
-        top: 18px;
+        top: 31px;
     }
     .searchscroll {
         position: absolute;
         width: 190px;
-        top: 8px;
+        top: 26px;
         right: 88px;
     }
     .ocultartext {
@@ -308,7 +308,7 @@ a {
     .aprecertitulo2 {
         display: block !important;
         position: absolute;
-        top: 16px;
+        top: 31px;
         border-color: #93D500 !important;
         color: #93D500 !important;
         left: 14px;

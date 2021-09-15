@@ -1,0 +1,24 @@
+<form (ngSubmit)="guardar(formlogin)" autocomplete="off" #formlogin="ngForm">
+    <div class="row animate__animated animate__fadeIn">
+        <div class="mb-3">
+            <label for="email" class="form-label">Su mail</label>
+            <input type="email" class="form-control" id="email" aria-describedby="email" [ngModel]="email" name="email" placeholder="Ej: usuario@mail.com" required email>
+
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" [ngModel]="password" name="password" id="password" required min="4">
+
+        </div>
+    </div>
+</form>
+<a class="text-primary" (click)="cambioformulario()">Registrarse</a>
+<span class="badge badge-danger errormensaje" *ngIf="error!=''">{{error}}</span>
+
+
+<br>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="cerrarModal()" data-dismiss="modal">Cancelar</button>
+    <button type="submit" class="btn btn-primary ingresarlogin" [disabled]="formlogin.invalid" (click)="guardar(formlogin)">Ingresar</button>
+</div>

@@ -5,18 +5,21 @@ import { ComponentsModule } from './components/components.module';
 import { HomeComponent } from './home/home.component';
 import { ProductosComponent } from './productos/productos.component';
 import { LoginComponent } from './login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImagenPipe } from './pipe/imagen.pipe';
+import { FormIngresoComponent } from './login/form-ingreso/form-ingreso.component';
+import { RegistroComponent } from './login/registro/registro.component';
 
 
 
 @NgModule({
-  declarations: [HomeComponent, ProductosComponent, LoginComponent, ImagenPipe],
+  declarations: [HomeComponent, ProductosComponent, LoginComponent, ImagenPipe, FormIngresoComponent, RegistroComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
     ComponentsModule,
     FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class HomeModule { }

@@ -1,4 +1,4 @@
-<form (ngSubmit)="guardar()" autocomplete="off" [formGroup]="formularioUsuarios" *ngIf="!cargando">
+<form (ngSubmit)="guardar()" autocomplete="off" [formGroup]="formularioUsuarios">
     <div class="row animate__animated animate__fadeIn">
         <div class="col-12 col-sm-6">
             <div class="mb-3">
@@ -40,35 +40,48 @@
         <div class="col-12 col-sm-4">
             <label for="rol" class="form-label">Seleccione Rol</label>
             <select class="form-control" formControlName="rol">
-           <option value="administrador">Administrador</option>
-           <option value="colaborador">Colaborador</option>
-      </select>
+         <option value="administrador">Administrador</option>
+         <option value="colaborador">Colaborador</option>
+    </select>
             <span class="form-text text-danger" *ngIf="campoInvalido('rol')">Seleccione una opcion</span>
         </div>
 
 
-        <div class="col-12 col-sm-6">
+        <div class="col-12 col-sm-12">
             <div class="mb-3">
                 <label for="password" class="form-label">Contraseña</label>
                 <input type="password" class="form-control" id="password" formControlName="password" placeholder="********">
                 <span class="form-text text-danger" *ngIf="campoInvalido('password')">Debe de tener de 5 letras minimo
-                </span>
+              </span>
             </div>
         </div>
 
 
-
-        <div class="col-12 col-sm-6">
-
-            <img *ngIf="imgTemp" [src]="imgTemp" class="img-thumbnail imgsubir">
-            <img *ngIf="!imgTemp" [src]="usuario.imagen! | imagen " class="img-thumbnail imgsubir">
-            <hr>
-            <input type="file" (change)="cambiarImagen($event)" class="py-2">
+        <div class="12">
+            <div *ngIf="!loading" class="alert alert-primary text-center" role="alert">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden"></span>
+                </div>
+                <p>Cargando....</p>
+            </div>
         </div>
 
-        <div class="col-12 col-sm-6">
-            <button class="btn btn-primary">Guardar</button>
+
+        <div class="12">
+            <div *ngIf="mensaje!==''" class="alert alert-danger text-center" role="alert">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden"></span>
+                </div>
+                <p>Error intente con otro correo</p>
+            </div>
         </div>
+
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" (click)="regresar()" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary ingresarlogin ">Registrar</button>
+        </div>
+
 
     </div>
 </form>

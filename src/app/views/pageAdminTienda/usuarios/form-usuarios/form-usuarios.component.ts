@@ -25,19 +25,18 @@ export class FormUsuariosComponent implements OnInit {
     telefono: ['',[Validators.required,Validators.minLength(7)]],
     email: ['',[Validators.required,Validators.email]],
     password: ['',[Validators.required,Validators.minLength(5)]],
-    password1: ['',[Validators.required,Validators.minLength(5)]],
     imagen: ['no-image'],
   });
   constructor(private fb: FormBuilder, private usuarioservice:UsuarioService,private loginusuario:LoginService, private fileUploadService:FileUploadService, private router:Router) { }
 
   ngOnInit(): void {
-  
-    this.idurl!='0'? this.cargarInformacion(): this.cargando = false; 
+
+    this.idurl!='0'? this.cargarInformacion(): this.cargando = false;
   }
   guardar()
-  {  
+  {
 
-    
+
     if(!this.formularioUsuarios.valid)
     {
       this.formularioUsuarios.markAllAsTouched();
@@ -58,7 +57,7 @@ export class FormUsuariosComponent implements OnInit {
                 this.loginusuario.actualizarLista = true;
                 this.router.navigateByUrl('dashboard/usuarios');
               }
-       });   
+       });
     }
     else{
 
@@ -67,7 +66,7 @@ export class FormUsuariosComponent implements OnInit {
       this.usuarioservice.putActualizarUsuario(this.usuario).subscribe(resp=> {
 
         this.usuario = resp.data;
- 
+
         if(this.imagenSubir)
         {
           this.fileUploadService.actualizarFoto(this.imagenSubir,'usuarios',this.usuario.id!);
@@ -80,7 +79,7 @@ export class FormUsuariosComponent implements OnInit {
     }
   }
   cargarInformacion(){
-   
+
     this.usuarioservice.listarUsuario(this.idurl).subscribe(resp=> {
       const {nombre,apellido, rol, telefono,email,imagen, id} =resp.data;
       this.usuario = resp.data;
@@ -93,7 +92,7 @@ export class FormUsuariosComponent implements OnInit {
         imagen,
       })
       this.cargando = false;
- 
+
     })
   }
   cambiarImagen(e: any): any
@@ -115,5 +114,5 @@ export class FormUsuariosComponent implements OnInit {
     return this.formularioUsuarios.controls[campo].errors
     && this.formularioUsuarios.controls[campo].touched;
   }
-  
+
 }

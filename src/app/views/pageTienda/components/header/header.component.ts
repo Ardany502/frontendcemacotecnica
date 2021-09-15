@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ModalService } from '../../../services/modal.service';
 
 @Component({
@@ -7,16 +8,27 @@ import { ModalService } from '../../../services/modal.service';
   styles: [
   ]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
 
-  constructor(private modalService:ModalService) { }
+  constructor(private modalService:ModalService, private router:Router) { }
 
   ngOnInit(): void {
     this.detectarPantall();
   }
+  ngOnDestroy(): void{
+    this.modalService.cerrarModal();
+
+  }
   modalLogin()
   {
-    this.modalService.abrirModal();
+    const token = localStorage.getItem('token') || '';
+    if(token)
+    {
+      this.router.navigateByUrl('/dashboard');
+    }else{
+      this.modalService.abrirModal();
+    }
+
   }
   detectarPantall()
   {
@@ -35,7 +47,7 @@ export class HeaderComponent implements OnInit {
         {
 
 
-          console.log(entries[0]);
+
           ocultarlementos?.classList.remove('scrollresponsivemenu');
           ocultaropciones?.classList.remove('scrollresponsivemenu')
           ocultarlogos?.classList.remove('scrollresponsivemenu')
@@ -56,7 +68,7 @@ export class HeaderComponent implements OnInit {
 
 
           // header?.classList.add('d-none');
-          console.log("ya no se mira");
+
 
         }
 

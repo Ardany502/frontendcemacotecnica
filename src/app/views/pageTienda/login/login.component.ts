@@ -11,37 +11,28 @@ import { LoginService } from '../../services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  email: string = '';
-  password: string = '';
-  error:string = '';
+
+  formulario: boolean = true;
+  login = true;
   loading = true;
-  constructor(public modalSerivce:ModalService, private loginservice:LoginService,private router: Router ) { }
-  @ViewChild ('formlogin') formlogin!: NgForm;
+  constructor(public modalSerivce:ModalService ) { }
+
   ngOnInit(): void {
   }
+  recibiendoEvento(e: boolean)
+  {
+    this.login = e;
 
+    console.log(e);
+
+  }
   cerrarModal()
   {
-   
+
    this.modalSerivce.cerrarModal();
   }
 
-  guardar(form: NgForm)
-  {
-    if(!form.valid)
-    {
-      
-      return 
-    }
-    this.loginservice.postLogin(form.value).subscribe(resp=> {
-        this.error = "";
-        this.router.navigateByUrl('/dashboard');
-        
-    },(err)=> {
-        console.log(err);
-        this.error = err.error.data;
-    });
-  }
+
 
 
 

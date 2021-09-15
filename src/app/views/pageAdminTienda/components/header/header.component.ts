@@ -14,15 +14,16 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
      this.detalleUsuario();
      console.log(this.loginservice.actualizarLista);
-     
+
      if(this.loginservice.actualizarLista)
-    {     
+    {
       this.detalleUsuario();
     }
-   
+
   }
   cerrarSession()
   {
+
     this.loginservice.logout();
   }
 
@@ -38,7 +39,7 @@ export class HeaderComponent implements OnInit {
       this.fotoperfil = 'assets/no-image.jpg';
     }else
     {
-       
+
       this.fotoperfil = base_urlImg+imagen;
     }
   }
